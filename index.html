@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lihi 實驗室 | 工具櫥窗提案</title>
+    <meta
+      name="description"
+      content="lihi 實驗室首頁重設提案。保留原本 logo、menu、header、footer，重新設計中段工具櫥窗。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+TC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://lihidev.com/labs/_chrome/chrome.css" />
+    <link rel="icon" sizes="32x32" href="https://lihidev.com/labs/_chrome/favicon-32x32.png" />
+    <link rel="icon" sizes="16x16" href="https://lihidev.com/labs/_chrome/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="https://lihidev.com/labs/_chrome/favicon-32x32.png" />
+  </head>
+  <body>
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="https://lihi.io/" class="nav-logo" aria-label="lihi.io">
+          <img src="https://lihidev.com/labs/_chrome/lihi-logo-primary.png" alt="lihi" style="height: 40px" />
+        </a>
+        <ul class="nav-links desktop-only">
+          <li><a href="https://lihidomain.com/" target="_blank" rel="noopener noreferrer">品牌網域</a></li>
+          <li><a href="https://lihi.io/" target="_blank" rel="noopener noreferrer">行銷工具</a></li>
+          <li><a href="https://lihidev.com/labs/">lihi 實驗室</a></li>
+          <li><a href="https://knowledge.lihi.io/pricing/" target="_blank" rel="noopener noreferrer">方案價格</a></li>
+          <li class="has-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">行銷資源 ▾</button>
+            <ul class="nav-dropdown">
+              <li><a href="https://knowledge.lihi.io/" target="_blank" rel="noopener noreferrer">知識庫</a></li>
+              <li><a href="https://knowledge.lihi.io/recommended-course-ch/" target="_blank" rel="noopener noreferrer">官方課程推薦</a></li>
+              <li><a href="https://verify.lihi.io/" target="_blank" rel="noopener noreferrer">lihi 證照驗證</a></li>
+              <li><a href="https://lihidomain.com/link-domain-entrepreneur/" target="_blank" rel="noopener noreferrer">99 元 .link 網域</a></li>
+            </ul>
+          </li>
+          <li><a href="https://knowledge.lihi.io/about-us-ch/" target="_blank" rel="noopener noreferrer">關於我們</a></li>
+        </ul>
+        <div class="nav-cta desktop desktop-only">
+          <a
+            href="https://app.lihi.io/admin/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="lihi-btn-secondary"
+            data-login-link
+            style="padding: 8px 20px; font-size: 14px"
+            >登入</a
+          >
+          <a
+            href="https://lihi.io/go/register"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="lihi-btn-primary"
+            style="padding: 10px 24px; font-size: 15px"
+            data-register-link
+            >免費註冊</a
+          >
+        </div>
+        <div class="nav-cta mobile mobile-only">
+          <a href="https://lihi.io/go/register" target="_blank" rel="noopener noreferrer" class="lihi-btn-primary" data-register-link
+            >免費註冊</a
+          >
+        </div>
+        <button class="nav-hamburger mobile-only" id="hamburger" aria-label="選單" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-mobile-menu mobile-only" id="mobileMenu">
+        <a href="https://lihidomain.com/" target="_blank" rel="noopener noreferrer">品牌網域</a>
+        <a href="https://lihi.io/" target="_blank" rel="noopener noreferrer">行銷工具</a>
+        <a href="https://lihidev.com/labs/">lihi 實驗室</a>
+        <a href="https://knowledge.lihi.io/pricing/" target="_blank" rel="noopener noreferrer">方案價格</a>
+        <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-controls="mobile-resources-submenu">行銷資源 ▾</button>
+        <div class="mobile-submenu" id="mobile-resources-submenu">
+          <a href="https://knowledge.lihi.io/" target="_blank" rel="noopener noreferrer">知識庫</a>
+          <a href="https://knowledge.lihi.io/recommended-course-ch/" target="_blank" rel="noopener noreferrer">官方課程推薦</a>
+          <a href="https://verify.lihi.io/" target="_blank" rel="noopener noreferrer">lihi 證照驗證</a>
+          <a href="https://lihidomain.com/link-domain-entrepreneur/" target="_blank" rel="noopener noreferrer">99 元 .link 網域</a>
+        </div>
+        <a href="https://knowledge.lihi.io/about-us-ch/" target="_blank" rel="noopener noreferrer">關於我們</a>
+        <div class="mobile-cta-row">
+          <a href="https://app.lihi.io/admin/login" target="_blank" rel="noopener noreferrer" class="lihi-btn-secondary" data-login-link>登入</a>
+          <a
+            href="https://lihi.io/go/register"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="lihi-btn-primary"
+            style="color: #fff"
+            data-register-link
+            >免費註冊</a
+          >
+        </div>
+      </div>
+      <div class="nav-mobile-overlay mobile-only" id="mobileOverlay"></div>
+    </nav>
+
+    <div class="page-noise page-noise-a"></div>
+    <div class="page-noise page-noise-b"></div>
+
+    <main class="labs-shell">
+      <section class="hero-block">
+        <div class="hero-copy">
+          <p class="overline">LIHI LABS SHOWCASE</p>
+          <h1>讓每一個小工具都像產品，不只是連結清單。</h1>
+          <p class="hero-lede">
+            lihi 實驗室不是功能倉庫，而是把實驗中、準備上線、已可使用的工具，整理成使用者一眼就懂價值的展示櫥窗。
+          </p>
+          <div class="hero-actions">
+            <a class="hero-button hero-button-primary" href="#tool-grid">看工具展示</a>
+            <a class="hero-button hero-button-secondary" href="#design-notes">看設計說明</a>
+          </div>
+        </div>
+
+        <aside class="hero-editorial">
+          <p class="editorial-label">本次方向</p>
+          <div class="editorial-card">
+            <strong>像 PressPlay 的專案櫥窗感</strong>
+            <p>保留 lihi 既有導覽與頁尾，只重做中段內容，把工具封面、亮點、使用情境與狀態一次講清楚。</p>
+          </div>
+          <div class="editorial-stats">
+            <article>
+              <strong>3 欄</strong>
+              <span>桌機一行三個工具</span>
+            </article>
+            <article>
+              <strong>2 種媒體</strong>
+              <span>縮圖 + demo video</span>
+            </article>
+            <article>
+              <strong>1 個重點</strong>
+              <span>先賣價值，再導流使用</span>
+            </article>
+          </div>
+        </aside>
+      </section>
+
+      <section class="intro-ribbon">
+        <article>
+          <span class="ribbon-kicker">給 lihi 用戶</span>
+          <p>快速找到現在能用的實驗工具，不用靠口耳相傳。</p>
+        </article>
+        <article>
+          <span class="ribbon-kicker">給內部團隊</span>
+          <p>每個工具先有獨立故事與定位，再決定是否正式產品化。</p>
+        </article>
+        <article>
+          <span class="ribbon-kicker">給未來上線</span>
+          <p>後續新工具只要補一筆資料，就能沿用同一套展示結構。</p>
+        </article>
+      </section>
+
+      <section class="controls-row">
+        <div class="controls-copy">
+          <p class="section-kicker">工具櫥窗</p>
+          <h2>每張卡都直接回答三件事：這是什麼、對誰有用、現在能不能用。</h2>
+        </div>
+        <label class="search-box">
+          <span class="visually-hidden">搜尋工具</span>
+          <input id="searchInput" type="search" placeholder="搜尋工具名稱、用途或標籤" autocomplete="off" />
+        </label>
+      </section>
+
+      <section class="tool-grid" id="tool-grid" aria-live="polite"></section>
+
+      <section class="design-notes" id="design-notes">
+        <div class="design-notes-head">
+          <p class="section-kicker">設計說明</p>
+          <h2>這版比目前 staging 多做了什麼</h2>
+        </div>
+        <div class="design-note-list">
+          <article>
+            <strong>先講工具價值</strong>
+            <p>不是只列名稱與 tag，而是先把使用情境、輸出結果與適用人群寫出來。</p>
+          </article>
+          <article>
+            <strong>媒體先行</strong>
+            <p>每張卡都有封面與 demo 區，使用者不必點進去才想像功能長什麼樣。</p>
+          </article>
+          <article>
+            <strong>保留 lihi DNA</strong>
+            <p>顏色沿用 `#FF6B9D`、`#1A1A5E`、`#FFF5F8`，但排版做得更像精選工具展示頁。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="lihi-site-footer">
+      <div class="lihi-site-footer-inner">
+        <div class="lihi-site-footer-left">
+          <img src="https://lihidev.com/labs/_chrome/lihi-logo-primary.png" alt="lihi" class="lihi-site-footer-logo" />
+          <p>利害短網址有限公司 | 2017 年成立，服務超過 5,000+ 品牌</p>
+          <p>© 2018-<span data-footer-year></span> 統編 82908327</p>
+        </div>
+        <div class="lihi-site-footer-right">
+          <div class="lihi-site-footer-links">
+            <a href="https://knowledge.lihi.io/terms-of-use/" target="_blank" rel="noopener noreferrer">服務條款</a>
+            <a href="https://knowledge.lihi.io/privacy-policy/" target="_blank" rel="noopener noreferrer">隱私權政策</a>
+            <a href="https://knowledge.lihi.io/service-level-agreement/" target="_blank" rel="noopener noreferrer">服務等級</a>
+            <a href="https://report.lihi.io" target="_blank" rel="noopener noreferrer">檢舉網址</a>
+            <a href="mailto:service@lihi.io">service@lihi.io</a>
+          </div>
+          <div class="lihi-site-footer-social">
+            <a href="https://www.facebook.com/lihi.io" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/lihi.io.tw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@lihi_io" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="https://lihidev.com/labs/_chrome/chrome.js" defer></script>
+  </body>
+</html>
