@@ -104,11 +104,11 @@ input {
 
 .hero-block {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(330px, 0.85fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.72fr);
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   border-radius: var(--radius-xl);
-  padding: clamp(22px, 3.2vw, 38px);
+  padding: clamp(18px, 2.6vw, 30px);
 }
 
 .overline,
@@ -141,7 +141,7 @@ input {
 .hero-copy h1 {
   max-width: 12ch;
   font-family: var(--serif);
-  font-size: clamp(2.8rem, 4.6vw, 4.9rem);
+  font-size: clamp(2.5rem, 4.1vw, 4.4rem);
   line-height: 0.93;
 }
 
@@ -160,14 +160,16 @@ input {
 
 .hero-lede {
   max-width: 50rem;
-  margin: 14px 0 0;
-  font-size: 1rem;
+  margin: 10px 0 0;
+  font-size: 0.96rem;
   color: var(--ink-soft);
 }
 
 .hero-art {
   position: relative;
-  min-height: 250px;
+  min-height: 200px;
+  max-width: 320px;
+  margin-left: auto;
 }
 
 .hero-art::before {
@@ -185,6 +187,7 @@ input {
   position: relative;
   z-index: 1;
   width: 100%;
+  max-width: 320px;
   display: block;
 }
 
@@ -548,7 +551,8 @@ input {
 
   .hero-art {
     min-height: 0;
-    max-width: 560px;
+    max-width: 420px;
+    margin: 0 auto;
   }
 }
 
