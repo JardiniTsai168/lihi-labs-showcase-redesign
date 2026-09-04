@@ -11,7 +11,6 @@ const tools = [
     forWho: ["需要快速上稿的品牌", "要先測訊息方向的行銷團隊", "想把商品頁重點整理出來的人"],
     outputs: ["主文案方向", "Meta 廣告版本", "Google Ads、LINE、SMS、Email 延伸格式"],
     highlights: ["從商品頁整理核心賣點", "把 CTA 與訴求先切成可測試版本", "多平台格式一起展開，降低手動重寫時間"],
-    thumb: "assets/copy-generator-cover.svg",
     demo: "assets/copy-generator-demo.mp4",
     link: "https://lihi.io/labs/copy-generator",
     noteLink: "https://lihi.io/labs/copy-generator"
@@ -28,7 +27,6 @@ const tools = [
     forWho: ["需要快速測素材方向的品牌", "廣告操盤與設計協作團隊", "想降低 creative testing 前置成本的人"],
     outputs: ["主視覺素材", "多平台尺寸延伸", "可調整的風格與人物設定"],
     highlights: ["支援上傳產品圖與 logo", "可延伸常用廣告比例", "更貼近實際投放前的素材整理流程"],
-    thumb: "assets/creative-generator-cover.svg",
     demo: "assets/creative-generator-demo.mp4",
     link: "https://creative.bktsai.link/",
     noteLink: "https://creative.bktsai.link/"
@@ -45,7 +43,6 @@ const tools = [
     forWho: ["內容團隊", "品牌經營者", "想重整舊貼文資產的人"],
     outputs: ["可 review 的貼文列表", "內容篩選流程", "後續精選與再製的整理基礎"],
     highlights: ["把舊貼文轉成可操作的內容資產", "適合做內容盤點與再利用", "目前在 staging，會持續收斂體驗"],
-    thumb: "assets/fb-export-cover.svg",
     demo: "assets/fb-export-demo.mp4",
     link: "https://blog.bktsai.link/studio/",
     noteLink: "https://blog.bktsai.link/studio/"
@@ -78,12 +75,9 @@ function renderCard(tool) {
   return `
     <article class="tool-card" data-status="${escapeHtml(tool.status)}">
       <div class="tool-media-wrap">
-        <div class="tool-thumb">
-          <img src="${escapeHtml(tool.thumb)}" alt="${escapeHtml(tool.name)} 縮圖" />
-        </div>
         <div class="tool-video">
           <span class="media-label">功能預覽</span>
-          <video autoplay muted loop playsinline preload="metadata" poster="${escapeHtml(tool.thumb)}">
+          <video autoplay muted loop playsinline preload="metadata">
             <source src="${escapeHtml(tool.demo)}" type="video/mp4" />
           </video>
         </div>
