@@ -5,15 +5,12 @@ const tools = [
     status: "running",
     statusLabel: "立即體驗",
     chips: ["素材", "AI", "多尺寸"],
-    summary: "把產品圖、logo 與文案整理成可直接拿去測試的廣告素材方向。",
-    description:
-      "適合想先做第一輪素材測試、但不想每次都從零開稿的團隊。先把可用主圖做出來，再往不同平台尺寸延伸。",
-    forWho: ["需要快速測素材方向的品牌", "廣告操盤與設計協作團隊", "想降低 creative testing 前置成本的人"],
-    outputs: ["主視覺素材", "多平台尺寸延伸", "可調整的風格與人物設定"],
-    highlights: ["支援上傳產品圖與 logo", "可延伸常用廣告比例", "更貼近實際投放前的素材整理流程"],
+    summary: "把產品圖、logo 跟核心訊息整理成可直接開始測試的廣告素材。",
+    problem: "適合想先確認素材方向，不想每次都從空白稿重新來過的團隊。",
+    output: "你會拿到主視覺提案、常用尺寸延伸，與可繼續微調的素材方向。",
+    highlights: ["支援上傳產品圖與 logo", "快速延伸常用廣告版位", "更貼近實際投放前的整理流程"],
     demo: "assets/creative-generator-demo.mp4",
-    link: "https://creative.bktsai.link/",
-    noteLink: "https://creative.bktsai.link/"
+    link: "https://creative.bktsai.link/"
   },
   {
     name: "著色圖產生器",
@@ -21,15 +18,12 @@ const tools = [
     status: "running",
     statusLabel: "立即體驗",
     chips: ["圖片", "AI", "親子"],
-    summary: "把照片快速整理成可列印、可上色的著色圖，讓靈感直接變成可玩的內容。",
-    description:
-      "適合想快速把人物、寵物或日常照片變成著色素材的情境。上傳照片後，能直接拿到線條清楚、適合列印與分享的著色版本。",
-    forWho: ["親子家庭", "想快速做互動素材的品牌", "需要圖像再利用內容的人"],
-    outputs: ["A4 著色圖", "可下載的黑白線稿", "適合列印與分享的圖片版本"],
-    highlights: ["上傳照片就能快速轉成著色圖", "保留主體辨識度與可上色空間", "適合活動素材、親子互動與內容延伸"],
+    summary: "把照片轉成可列印、可分享的著色圖，讓原本的圖片多一種互動用法。",
+    problem: "適合想把人物、寵物或活動照片快速變成可玩的內容，不必另外重畫線稿。",
+    output: "你會拿到線條清楚的黑白著色圖，能直接下載、列印，或延伸成活動素材。",
+    highlights: ["上傳照片就能快速生成", "保留主體辨識度與留白空間", "適合親子互動與品牌活動"],
     demo: "assets/coloring-generator-demo.mp4",
-    link: "https://coloring.bktsai.link/",
-    noteLink: "https://coloring.bktsai.link/"
+    link: "https://coloring.bktsai.link/"
   }
 ];
 
@@ -52,8 +46,6 @@ function renderGrid(target, items, emptyMessage) {
 
 function renderCard(tool) {
   const chips = (tool.chips || []).map((chip) => `<span class="tool-chip">${escapeHtml(chip)}</span>`).join("");
-  const forWho = (tool.forWho || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-  const outputs = (tool.outputs || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
   const highlights = (tool.highlights || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 
   return `
@@ -74,25 +66,17 @@ function renderCard(tool) {
         </div>
         <h3 class="tool-title">${escapeHtml(tool.name)}</h3>
         <p class="tool-summary">${escapeHtml(tool.summary)}</p>
-        <p class="tool-description">${escapeHtml(tool.description)}</p>
       </div>
 
-      <div class="tool-meta-clusters">
-        <div class="tool-cluster">
-          <strong>適合誰</strong>
-          <ul class="tool-detail-list">${forWho}</ul>
-        </div>
-        <div class="tool-cluster">
-          <strong>你會拿到什麼</strong>
-          <ul class="tool-detail-list">${outputs}</ul>
-        </div>
+      <div class="tool-notes">
+        <p><strong>解決什麼問題</strong>${escapeHtml(tool.problem)}</p>
+        <p><strong>你會拿到什麼</strong>${escapeHtml(tool.output)}</p>
       </div>
 
       <ul class="tool-highlight-list">${highlights}</ul>
 
       <div class="tool-links">
         <a class="tool-link tool-link-primary" href="${escapeHtml(tool.link)}" target="_blank" rel="noopener noreferrer">前往工具</a>
-        <a class="tool-link tool-link-secondary" href="${escapeHtml(tool.noteLink)}" target="_blank" rel="noopener noreferrer">查看展示</a>
       </div>
     </article>
   `;

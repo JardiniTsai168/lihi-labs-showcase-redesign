@@ -259,8 +259,7 @@ input {
 .benefit-strip,
 .tool-grid,
 .tool-links,
-.principle-grid,
-.tool-meta-clusters {
+.principle-grid {
   display: grid;
   gap: 14px;
 }
@@ -354,10 +353,10 @@ input {
 
 .tool-card {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  gap: 16px;
+  grid-template-rows: auto auto auto 1fr auto;
+  gap: 14px;
   min-height: 100%;
-  padding: 18px;
+  padding: 16px;
   border-radius: 30px;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
@@ -465,50 +464,54 @@ input {
 
 .tool-head {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .tool-title {
   font-family: var(--serif);
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 0.96;
 }
 
 .tool-summary {
   margin: 0;
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   color: var(--navy);
 }
 
-.tool-meta-clusters {
-  grid-template-columns: 1fr 1fr;
+.tool-notes {
+  display: grid;
+  gap: 10px;
 }
 
-.tool-cluster {
-  padding: 14px;
+.tool-notes p {
+  margin: 0;
+  padding: 12px 14px;
   border-radius: 18px;
   background: rgba(26, 26, 94, 0.04);
+  color: var(--ink-soft);
+  line-height: 1.62;
 }
 
-.tool-cluster strong {
+.tool-notes strong {
   display: block;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-}
-
-.tool-detail-list,
-.tool-highlight-list {
-  margin: 0;
-  padding-left: 18px;
-}
-
-.tool-highlight-list li::marker,
-.tool-detail-list li::marker {
-  color: var(--pink-strong);
+  margin-bottom: 4px;
+  color: var(--navy-strong);
+  font-size: 0.92rem;
 }
 
 .tool-links {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+.tool-highlight-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+}
+
+.tool-highlight-list li::marker {
+  color: var(--pink-strong);
 }
 
 .tool-empty {
@@ -561,8 +564,7 @@ input {
   }
 
   .hero-stats,
-  .tool-links,
-  .tool-meta-clusters {
+  .tool-links {
     grid-template-columns: 1fr;
   }
 
