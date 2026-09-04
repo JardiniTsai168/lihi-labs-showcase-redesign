@@ -103,12 +103,51 @@ input {
 }
 
 .hero-block {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.72fr);
   align-items: center;
   gap: 16px;
+  overflow: hidden;
+  isolation: isolate;
   border-radius: var(--radius-xl);
   padding: clamp(18px, 2.6vw, 30px);
+}
+
+.hero-block::before,
+.hero-block::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero-block::before {
+  inset: auto auto -18% 28%;
+  width: 360px;
+  height: 360px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 107, 157, 0.12), rgba(255, 107, 157, 0) 68%);
+  z-index: 0;
+}
+
+.hero-block::after {
+  top: 20px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 28px;
+  border: 1px solid rgba(26, 26, 94, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)),
+    rgba(255, 255, 255, 0.14);
+  transform: rotate(10deg);
+  z-index: 0;
+}
+
+.hero-copy,
+.hero-art {
+  position: relative;
+  z-index: 1;
 }
 
 .overline,
@@ -160,8 +199,8 @@ input {
 
 .hero-lede {
   max-width: 50rem;
-  margin: 10px 0 0;
-  font-size: 0.96rem;
+  margin: 1.25em 0 0;
+  font-size: 1.06rem;
   color: var(--ink-soft);
 }
 
