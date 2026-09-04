@@ -52,65 +52,9 @@ const tools = [
   }
 ];
 
-const availableGrid = document.querySelector("#available-grid");
-const upcomingGrid = document.querySelector("#upcoming-grid");
-const heroStats = document.querySelector("#hero-stats");
-const searchInput = document.querySelector("#searchInput");
+const toolGrid = document.querySelector("#tool-grid");
 
-renderAll("");
-
-if (searchInput) {
-  searchInput.addEventListener("input", () => renderAll(searchInput.value));
-}
-
-function renderAll(keyword) {
-  const query = String(keyword || "")
-    .trim()
-    .toLowerCase();
-
-  const matched = tools.filter((tool) => {
-    if (!query) {
-      return true;
-    }
-
-    const haystack = [tool.name, tool.summary, tool.description, ...(tool.chips || []), ...(tool.highlights || []), ...(tool.forWho || [])]
-      .join(" ")
-      .toLowerCase();
-
-    return haystack.includes(query);
-  });
-
-  const available = matched.filter((tool) => tool.status === "running");
-  const upcoming = matched.filter((tool) => tool.status !== "running");
-
-  renderHeroStats();
-  renderGrid(availableGrid, available, "目前沒有符合的可用工具。");
-  renderGrid(upcomingGrid, upcoming, "目前沒有符合的即將登場工具。");
-}
-
-function renderHeroStats() {
-  if (!heroStats) {
-    return;
-  }
-
-  const availableCount = tools.filter((tool) => tool.status === "running").length;
-  const upcomingCount = tools.filter((tool) => tool.status !== "running").length;
-
-  heroStats.innerHTML = `
-    <article>
-      <strong>${availableCount}</strong>
-      <span>現在可用工具</span>
-    </article>
-    <article>
-      <strong>${upcomingCount}</strong>
-      <span>即將登場工具</span>
-    </article>
-    <article>
-      <strong>${tools.length}</strong>
-      <span>目前展示項目</span>
-    </article>
-  `;
-}
+renderGrid(toolGrid, tools, "目前沒有可展示的工具。");
 
 function renderGrid(target, items, emptyMessage) {
   if (!target) {
