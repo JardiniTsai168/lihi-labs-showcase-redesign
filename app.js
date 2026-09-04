@@ -1,21 +1,5 @@
 const tools = [
   {
-    name: "廣告文案產生器",
-    slug: "copy-generator",
-    status: "running",
-    statusLabel: "立即體驗",
-    chips: ["文案", "廣告", "立即可用"],
-    summary: "把商品頁整理成可直接測試的廣告文案，先把第一版上稿速度拉起來。",
-    description:
-      "適合正在趕檔期、要快速驗證賣點與 CTA 的品牌團隊。輸入商品頁後，先產出能上稿、能比較、能往下優化的文案版本。",
-    forWho: ["需要快速上稿的品牌", "要先測訊息方向的行銷團隊", "想把商品頁重點整理出來的人"],
-    outputs: ["主文案方向", "Meta 廣告版本", "Google Ads、LINE、SMS、Email 延伸格式"],
-    highlights: ["從商品頁整理核心賣點", "把 CTA 與訴求先切成可測試版本", "多平台格式一起展開，降低手動重寫時間"],
-    demo: "assets/copy-generator-demo.mp4",
-    link: "https://lihi.io/labs/copy-generator",
-    noteLink: "https://lihi.io/labs/copy-generator"
-  },
-  {
     name: "廣告素材產生器",
     slug: "creative",
     status: "running",
@@ -32,20 +16,20 @@ const tools = [
     noteLink: "https://creative.bktsai.link/"
   },
   {
-    name: "FB 貼文匯出整理器",
-    slug: "fb-post-export",
-    status: "staging",
-    statusLabel: "即將上線",
-    chips: ["內容整理", "Facebook", "即將上線"],
-    summary: "把 Facebook 舊貼文重新整理成可篩選、可回看、可再利用的內容資產。",
+    name: "著色圖產生器",
+    slug: "coloring",
+    status: "running",
+    statusLabel: "立即體驗",
+    chips: ["圖片", "AI", "親子"],
+    summary: "把照片快速整理成可列印、可上色的著色圖，讓靈感直接變成可玩的內容。",
     description:
-      "適合想把舊內容重新盤點、挑出可再製素材的團隊。不是單純匯出資料，而是把內容重新整理成下一步能用的清單。",
-    forWho: ["內容團隊", "品牌經營者", "想重整舊貼文資產的人"],
-    outputs: ["可 review 的貼文列表", "內容篩選流程", "後續精選與再製的整理基礎"],
-    highlights: ["把舊貼文轉成可操作的內容資產", "適合做內容盤點與再利用", "目前在 staging，會持續收斂體驗"],
-    demo: "assets/fb-export-demo.mp4",
-    link: "https://blog.bktsai.link/studio/",
-    noteLink: "https://blog.bktsai.link/studio/"
+      "適合想快速把人物、寵物或日常照片變成著色素材的情境。上傳照片後，能直接拿到線條清楚、適合列印與分享的著色版本。",
+    forWho: ["親子家庭", "想快速做互動素材的品牌", "需要圖像再利用內容的人"],
+    outputs: ["A4 著色圖", "可下載的黑白線稿", "適合列印與分享的圖片版本"],
+    highlights: ["上傳照片就能快速轉成著色圖", "保留主體辨識度與可上色空間", "適合活動素材、親子互動與內容延伸"],
+    demo: "assets/coloring-generator-demo.mp4",
+    link: "https://coloring.bktsai.link/",
+    noteLink: "https://coloring.bktsai.link/"
   }
 ];
 
