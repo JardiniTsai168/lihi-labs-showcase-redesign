@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lihi 實驗室 | 工具櫥窗提案</title>
+    <title>lihi 實驗室</title>
     <meta
       name="description"
-      content="lihi 實驗室首頁重設提案。保留原本 logo、menu、header、footer，重新設計中段工具櫥窗。"
+      content="lihi 實驗室收錄 lihi 正在孵化與已可使用的小工具，包含廣告文案、素材生成與內容整理工作流。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -106,85 +106,87 @@
     <main class="labs-shell">
       <section class="hero-block">
         <div class="hero-copy">
-          <p class="overline">LIHI LABS SHOWCASE</p>
-          <h1>讓每一個小工具都像產品，不只是連結清單。</h1>
+          <p class="overline">LIHI LABS</p>
+          <h1>把正在發芽的小工具，整理成真的能被使用的產品入口。</h1>
           <p class="hero-lede">
-            lihi 實驗室不是功能倉庫，而是把實驗中、準備上線、已可使用的工具，整理成使用者一眼就懂價值的展示櫥窗。
+            這裡收錄 lihi 正在孵化、測試、準備正式上線的工具。每個工具都不是只有功能名稱，而是直接告訴你能解決什麼問題、適合誰、現在能不能用。
           </p>
           <div class="hero-actions">
-            <a class="hero-button hero-button-primary" href="#tool-grid">看工具展示</a>
-            <a class="hero-button hero-button-secondary" href="#design-notes">看設計說明</a>
+            <a class="hero-button hero-button-primary" href="#available-tools">現在可用</a>
+            <a class="hero-button hero-button-secondary" href="#upcoming-tools">即將登場</a>
           </div>
         </div>
 
-        <aside class="hero-editorial">
-          <p class="editorial-label">本次方向</p>
-          <div class="editorial-card">
-            <strong>像 PressPlay 的專案櫥窗感</strong>
-            <p>保留 lihi 既有導覽與頁尾，只重做中段內容，把工具封面、亮點、使用情境與狀態一次講清楚。</p>
+        <aside class="hero-panel">
+          <div class="hero-panel-card">
+            <span class="hero-panel-label">本頁定位</span>
+            <strong>不是工具清單，是 lihi 的實驗產品櫥窗</strong>
+            <p>讓使用者先理解每個工具的價值，再決定要不要點進去用，而不是看到一串名稱就離開。</p>
           </div>
-          <div class="editorial-stats">
-            <article>
-              <strong>3 欄</strong>
-              <span>桌機一行三個工具</span>
-            </article>
-            <article>
-              <strong>2 種媒體</strong>
-              <span>縮圖 + demo video</span>
-            </article>
-            <article>
-              <strong>1 個重點</strong>
-              <span>先賣價值，再導流使用</span>
-            </article>
-          </div>
+          <div class="hero-stats" id="hero-stats"></div>
         </aside>
       </section>
 
-      <section class="intro-ribbon">
+      <section class="benefit-strip">
         <article>
-          <span class="ribbon-kicker">給 lihi 用戶</span>
-          <p>快速找到現在能用的實驗工具，不用靠口耳相傳。</p>
+          <span class="ribbon-kicker">快速理解</span>
+          <p>縮圖、demo、亮點與狀態一次看完，不需要逐個點進去猜。</p>
         </article>
         <article>
-          <span class="ribbon-kicker">給內部團隊</span>
-          <p>每個工具先有獨立故事與定位，再決定是否正式產品化。</p>
+          <span class="ribbon-kicker">持續擴充</span>
+          <p>未來新增工具時，只要補一筆資料，就能沿用同一套展示格式。</p>
         </article>
         <article>
-          <span class="ribbon-kicker">給未來上線</span>
-          <p>後續新工具只要補一筆資料，就能沿用同一套展示結構。</p>
+          <span class="ribbon-kicker">更像產品</span>
+          <p>把每個工具當成一個有定位、有故事、有使用情境的小產品。</p>
         </article>
       </section>
 
-      <section class="controls-row">
-        <div class="controls-copy">
-          <p class="section-kicker">工具櫥窗</p>
-          <h2>每張卡都直接回答三件事：這是什麼、對誰有用、現在能不能用。</h2>
+      <section class="section-block" id="available-tools">
+        <div class="section-head">
+          <div class="section-copy">
+            <p class="section-kicker">現在可用</p>
+            <h2>已經可以開始體驗的工具</h2>
+            <p>適合想先上手、先測、先確認工作流程的人。</p>
+          </div>
+          <label class="search-box">
+            <span class="visually-hidden">搜尋工具</span>
+            <input id="searchInput" type="search" placeholder="搜尋工具名稱、用途或標籤" autocomplete="off" />
+          </label>
         </div>
-        <label class="search-box">
-          <span class="visually-hidden">搜尋工具</span>
-          <input id="searchInput" type="search" placeholder="搜尋工具名稱、用途或標籤" autocomplete="off" />
-        </label>
+        <div class="tool-grid" id="available-grid" aria-live="polite"></div>
       </section>
 
-      <section class="tool-grid" id="tool-grid" aria-live="polite"></section>
-
-      <section class="design-notes" id="design-notes">
-        <div class="design-notes-head">
-          <p class="section-kicker">設計說明</p>
-          <h2>這版比目前 staging 多做了什麼</h2>
+      <section class="section-block section-block-alt" id="upcoming-tools">
+        <div class="section-head">
+          <div class="section-copy">
+            <p class="section-kicker">即將登場</p>
+            <h2>下一批會進實驗室的工具</h2>
+            <p>還在整理流程或收尾，但已經能先讓內部看到產品感與未來定位。</p>
+          </div>
         </div>
-        <div class="design-note-list">
+        <div class="tool-grid" id="upcoming-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="principles-block">
+        <div class="section-head">
+          <div class="section-copy">
+            <p class="section-kicker">使用方式</p>
+            <h2>lihi 實驗室怎麼看</h2>
+          </div>
+        </div>
+        <div class="principle-grid">
           <article>
-            <strong>先講工具價值</strong>
-            <p>不是只列名稱與 tag，而是先把使用情境、輸出結果與適用人群寫出來。</p>
+            <strong>先看情境</strong>
+            <p>每張卡先告訴你它在什麼工作情境下有價值，不只是功能名詞。</p>
           </article>
           <article>
-            <strong>媒體先行</strong>
-            <p>每張卡都有封面與 demo 區，使用者不必點進去才想像功能長什麼樣。</p>
+            <strong>再看輸出</strong>
+            <p>你會知道這個工具最後產出什麼，適不適合接到你的流程裡。</p>
           </article>
           <article>
-            <strong>保留 lihi DNA</strong>
-            <p>顏色沿用 `#FF6B9D`、`#1A1A5E`、`#FFF5F8`，但排版做得更像精選工具展示頁。</p>
+            <strong>最後才點進去</strong>
+            <p>如果工具仍在 staging 或內測，卡片本身也會先把狀態說清楚。</p>
           </article>
         </div>
       </section>
