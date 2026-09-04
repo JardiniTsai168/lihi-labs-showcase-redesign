@@ -57,7 +57,7 @@ function renderCard(tool) {
   const highlights = (tool.highlights || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 
   return `
-    <article class="tool-card" data-status="${escapeHtml(tool.status)}">
+    <article class="tool-card" data-status="${escapeHtml(tool.status)}" data-slug="${escapeHtml(tool.slug)}">
       <div class="tool-media-wrap">
         <div class="tool-video">
           <span class="media-label">功能預覽</span>

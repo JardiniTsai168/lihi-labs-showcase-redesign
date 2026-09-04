@@ -409,6 +409,16 @@ input {
   aspect-ratio: 16 / 9;
 }
 
+.tool-card[data-slug="coloring"] .tool-video {
+  background:
+    radial-gradient(circle at top, rgba(255, 107, 157, 0.18), transparent 56%),
+    linear-gradient(180deg, #fff9fc 0%, #fff0f5 100%);
+}
+
+.tool-card[data-slug="coloring"] .tool-video video {
+  object-fit: contain;
+}
+
 .media-label {
   position: absolute;
   top: 12px;
