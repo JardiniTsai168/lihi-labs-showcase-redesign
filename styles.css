@@ -112,6 +112,10 @@ input {
   isolation: isolate;
   border-radius: var(--radius-xl);
   padding: clamp(18px, 2.6vw, 30px);
+  background:
+    radial-gradient(circle at 74% 24%, rgba(255, 107, 157, 0.14), transparent 18%),
+    radial-gradient(circle at 58% 86%, rgba(26, 26, 94, 0.08), transparent 24%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.94) 0 44%, rgba(255, 247, 250, 0.86) 70%, rgba(247, 246, 255, 0.9) 100%);
 }
 
 .hero-block::before,
@@ -122,11 +126,17 @@ input {
 }
 
 .hero-block::before {
-  inset: auto auto -18% 28%;
-  width: 360px;
-  height: 360px;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 107, 157, 0.12), rgba(255, 107, 157, 0) 68%);
+  top: 15%;
+  left: 43%;
+  width: 32%;
+  height: 70%;
+  border-radius: 30px;
+  background-image: radial-gradient(circle, rgba(239, 77, 132, 0.2) 1.35px, transparent 1.6px);
+  background-size: 18px 18px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 24%, #000 76%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 24%, #000 76%, transparent 100%);
+  opacity: 0.72;
+  transform: rotate(-4deg);
   z-index: 0;
 }
 
@@ -148,6 +158,20 @@ input {
 .hero-art {
   position: relative;
   z-index: 1;
+}
+
+.hero-copy::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -34px;
+  width: min(68%, 420px);
+  height: 7px;
+  background:
+    radial-gradient(circle at 1% 50%, var(--pink-strong) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 50% 50%, rgba(26, 26, 94, 0.42) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 99% 50%, var(--pink) 0 3px, transparent 3.5px),
+    linear-gradient(90deg, rgba(239, 77, 132, 0.34), rgba(26, 26, 94, 0.2), rgba(255, 107, 157, 0.08)) center / 100% 1px no-repeat;
 }
 
 .overline,
@@ -220,6 +244,15 @@ input {
   border-radius: 999px;
   background: radial-gradient(circle, rgba(255, 107, 157, 0.18), rgba(255, 107, 157, 0));
   filter: blur(8px);
+}
+
+.hero-art::after {
+  content: "";
+  position: absolute;
+  inset: 8% -7% 5% 2%;
+  border: 1px dashed rgba(26, 26, 94, 0.14);
+  border-radius: 50%;
+  transform: rotate(-11deg);
 }
 
 .hero-art img {
@@ -592,6 +625,19 @@ input {
     min-height: 0;
     max-width: 420px;
     margin: 0 auto;
+  }
+
+  .hero-copy::after {
+    display: none;
+  }
+
+  .hero-block::before {
+    top: auto;
+    bottom: 6%;
+    left: 18%;
+    width: 64%;
+    height: 34%;
+    opacity: 0.48;
   }
 }
 
