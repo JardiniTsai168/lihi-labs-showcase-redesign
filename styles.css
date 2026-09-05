@@ -601,6 +601,10 @@ input {
     padding-top: 26px;
   }
 
+  .hero-block::after {
+    display: none;
+  }
+
   .hero-copy h1 {
     max-width: 100%;
     font-size: clamp(2.35rem, 14vw, 4rem);
@@ -613,5 +617,45 @@ input {
 
   .tool-title {
     font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .labs-shell {
+    padding-bottom: 56px;
+  }
+
+  .hero-block {
+    gap: 22px;
+    padding: 18px;
+    border-radius: 28px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.35rem, 13.5vw, 3.5rem);
+    line-height: 1;
+  }
+
+  .hero-lede {
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  .hero-art {
+    width: min(100%, 280px);
+  }
+
+  .section-block {
+    margin-top: 36px;
+  }
+
+  .tool-card {
+    padding: 14px;
+    border-radius: 26px;
+  }
+
+  .tool-status,
+  .tool-chip {
+    min-height: 32px;
   }
 }
