@@ -35,6 +35,10 @@ function renderGrid(target, items, emptyMessage) {
 function renderCard(tool) {
   return `
     <article class="tool-card" data-slug="${escapeHtml(tool.slug)}">
+      <div class="tool-head">
+        <h3 class="tool-title">${escapeHtml(tool.name)}</h3>
+      </div>
+
       <div class="tool-media-wrap">
         <div class="tool-video">
           <span class="media-label">範例圖 / 功能預覽</span>
@@ -44,10 +48,7 @@ function renderCard(tool) {
         </div>
       </div>
 
-      <div class="tool-head">
-        <h3 class="tool-title">${escapeHtml(tool.name)}</h3>
-        <p class="tool-summary">${escapeHtml(tool.summary)}</p>
-      </div>
+      <p class="tool-summary">${escapeHtml(tool.summary)}</p>
 
       <div class="tool-links">
         <a class="tool-link tool-link-primary" href="${escapeHtml(tool.link)}" target="_blank" rel="noopener noreferrer">前往工具</a>
