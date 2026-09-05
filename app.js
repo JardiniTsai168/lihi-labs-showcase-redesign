@@ -2,14 +2,14 @@ const tools = [
   {
     name: "文案+素材產生器",
     slug: "creative",
-    summary: "輸入產品名稱跟三個優點，工具直接幫你產出文案、廣告平台該有的格式與可直接開始測試的廣告素材。",
+    summary: "不知道廣告該怎麼寫、素材怎麼做？輸入產品名稱和三個優點，剩下的交給我們！",
     demo: "assets/creative-generator-demo.mp4",
     link: "https://creative.bktsai.link/"
   },
   {
     name: "著色圖產生器",
     slug: "coloring",
-    summary: "把寵物跟家人照片轉成可列印、可分享的著色圖，讓著色圖多一份親子感。",
+    summary: "把你最喜歡的寵物、家人或風景照片，變成一張可以親手上色的回憶。",
     demo: "assets/coloring-generator-demo.mp4",
     link: "https://coloring.bktsai.link/"
   }
