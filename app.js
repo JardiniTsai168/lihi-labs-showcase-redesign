@@ -62,6 +62,14 @@ const tools = [
     preview: "assets/marketing-guide-preview.svg",
     previewType: "image",
     link: "https://lihi.io/"
+  },
+  {
+    name: "客服報表系統",
+    slug: "support-report",
+    summary: "讓 AI 讀懂所有客服訊息，自動整理常見問題與分析報表，幫你找出服務流程裡容易被忽略的盲點。",
+    preview: "assets/support-report-preview.svg",
+    previewType: "image",
+    link: "https://lihi.io/"
   }
 ];
 
