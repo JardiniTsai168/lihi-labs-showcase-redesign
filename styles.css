@@ -350,11 +350,24 @@ input {
   box-shadow: 0 20px 44px rgba(26, 26, 94, 0.14);
 }
 
-.hero-art-badge {
-  position: absolute;
-  top: -12px;
-  left: -10px;
+.hero-art-heading {
+  position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 10px 2px;
+}
+
+.hero-art-heading strong {
+  color: var(--navy-strong);
+  font-size: clamp(0.95rem, 1.35vw, 1.15rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.hero-art-badge {
+  flex: 0 0 auto;
   padding: 7px 11px;
   border-radius: 999px;
   background: var(--navy);
