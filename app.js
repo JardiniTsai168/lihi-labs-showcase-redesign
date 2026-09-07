@@ -73,6 +73,14 @@ const tools = [
     previewType: "image",
     beta: true,
     link: "https://lihi.io/"
+  },
+  {
+    name: "Google 試算表外掛",
+    slug: "sheets-addon",
+    summary: "在 Google 試算表裡直接輸入指令，就能快速建立 lihi 短網址，整理大量連結也不用來回切換工具。",
+    preview: "assets/sheets-addon-preview.svg",
+    previewType: "image",
+    link: "https://lihi.io/"
   }
 ];
 
