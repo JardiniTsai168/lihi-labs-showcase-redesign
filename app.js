@@ -84,9 +84,44 @@ const tools = [
   }
 ];
 
+const PAGE_SIZE = 6;
+const FAVORITES_STORAGE_KEY = "lihi-tool-library-favorites";
 const toolGrid = document.querySelector("#tool-grid");
+const toolsSection = document.querySelector("#tools");
+const pagination = document.querySelector("#pagination");
+const pageSummary = document.querySelector("#page-summary");
+const favoriteTools = document.querySelector("#favorite-tools");
+const favoriteEmpty = document.querySelector("#favorite-empty");
+const favoriteStatus = document.querySelector("#favorite-status");
 
-renderGrid(toolGrid, tools, "目前沒有可展示的工具。");
+let currentPage = 1;
+const favoriteSlugs = loadFavorites();
+
+renderPage();
+renderFavorites();
+
+toolGrid?.addEventListener("click", handleFavoriteToggle);
+favoriteTools?.addEventListener("click", handleFavoriteToggle);
+pagination?.addEventListener("click", handlePageChange);
+
+function renderPage({ scroll = false } = {}) {
+  const totalPages = Math.max(1, Math.ceil(tools.length / PAGE_SIZE));
+  currentPage = Math.min(Math.max(currentPage, 1), totalPages);
+  const pageStart = (currentPage - 1) * PAGE_SIZE;
+  const pageItems = tools.slice(pageStart, pageStart + PAGE_SIZE);
+
+  renderGrid(toolGrid, pageItems, "目前沒有可展示的工具。");
+  renderPagination(totalPages);
+
+  if (pageSummary) {
+    pageSummary.textContent = `第 ${currentPage} / ${totalPages} 頁，共 ${tools.length} 個工具`;
+  }
+
+  if (scroll && toolsSection) {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    toolsSection.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  }
+}
 
 function renderGrid(target, items, emptyMessage) {
   if (!target) {
@@ -101,6 +136,126 @@ function renderGrid(target, items, emptyMessage) {
   target.innerHTML = items.map(renderCard).join("");
 }
 
+function renderPagination(totalPages) {
+  if (!pagination) {
+    return;
+  }
+
+  if (totalPages <= 1) {
+    pagination.hidden = true;
+    pagination.innerHTML = "";
+    return;
+  }
+
+  pagination.hidden = false;
+  const pageButtons = Array.from({ length: totalPages }, (_, index) => {
+    const page = index + 1;
+    const currentAttribute = page === currentPage ? ` aria-current="page"` : "";
+    return `<button type="button" class="pagination-page" data-page="${page}"${currentAttribute}>${page}</button>`;
+  }).join("");
+
+  pagination.innerHTML = `
+    <button type="button" class="pagination-direction" data-page="${currentPage - 1}" ${currentPage === 1 ? "disabled" : ""}>上一頁</button>
+    <div class="pagination-pages">${pageButtons}</div>
+    <button type="button" class="pagination-direction" data-page="${currentPage + 1}" ${currentPage === totalPages ? "disabled" : ""}>下一頁</button>
+  `;
+}
+
+function handlePageChange(event) {
+  const button = event.target.closest("[data-page]");
+  if (!button || button.disabled) {
+    return;
+  }
+
+  const nextPage = Number(button.dataset.page);
+  if (!Number.isInteger(nextPage) || nextPage === currentPage) {
+    return;
+  }
+
+  currentPage = nextPage;
+  renderPage({ scroll: true });
+}
+
+function handleFavoriteToggle(event) {
+  const button = event.target.closest("[data-favorite-toggle]");
+  if (!button) {
+    return;
+  }
+
+  const slug = button.dataset.favoriteToggle;
+  const tool = tools.find((item) => item.slug === slug);
+  if (!tool) {
+    return;
+  }
+
+  const isRemoving = favoriteSlugs.has(slug);
+  if (isRemoving) {
+    favoriteSlugs.delete(slug);
+  } else {
+    favoriteSlugs.add(slug);
+  }
+
+  saveFavorites();
+  renderFavorites();
+  renderPage();
+
+  if (favoriteStatus) {
+    favoriteStatus.textContent = isRemoving
+      ? `已將${tool.name}從常用工具移除。`
+      : `已將${tool.name}加入常用工具。`;
+  }
+}
+
+function renderFavorites() {
+  if (!favoriteTools || !favoriteEmpty) {
+    return;
+  }
+
+  const favorites = tools.filter((tool) => favoriteSlugs.has(tool.slug));
+  favoriteEmpty.hidden = favorites.length > 0;
+  favoriteTools.hidden = favorites.length === 0;
+  favoriteTools.innerHTML = favorites.map(renderFavoriteShortcut).join("");
+}
+
+function renderFavoriteShortcut(tool) {
+  const betaBadge = tool.beta ? `<span class="favorite-beta">Beta</span>` : "";
+
+  return `
+    <article class="favorite-tool">
+      <div class="favorite-tool-name">
+        <span class="favorite-star" aria-hidden="true">★</span>
+        <strong>${escapeHtml(tool.name)}</strong>
+        ${betaBadge}
+      </div>
+      <div class="favorite-tool-actions">
+        <a href="${escapeHtml(tool.link)}" target="_blank" rel="noopener noreferrer">前往工具</a>
+        <button type="button" data-favorite-toggle="${escapeHtml(tool.slug)}" aria-label="從常用工具移除${escapeHtml(tool.name)}">移除</button>
+      </div>
+    </article>
+  `;
+}
+
+function loadFavorites() {
+  try {
+    const storedValue = window.localStorage.getItem(FAVORITES_STORAGE_KEY);
+    const storedSlugs = storedValue ? JSON.parse(storedValue) : [];
+    const validSlugs = Array.isArray(storedSlugs)
+      ? storedSlugs.filter((slug) => tools.some((tool) => tool.slug === slug))
+      : [];
+    return new Set(validSlugs);
+  } catch {
+    return new Set();
+  }
+}
+
+function saveFavorites() {
+  try {
+    window.localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...favoriteSlugs]));
+  } catch {
+    // Favorites still work for the current page when browser storage is unavailable.
+  }
+}
+
 function renderCard(tool) {
   const preview = tool.previewType === "image"
     ? `<img src="${escapeHtml(tool.preview)}" alt="${escapeHtml(tool.name)} 功能預覽" loading="lazy" />`
@@ -108,6 +263,9 @@ function renderCard(tool) {
         <source src="${escapeHtml(tool.preview)}" type="video/mp4" />
       </video>`;
   const betaBadge = tool.beta ? `<span class="tool-beta">Beta</span>` : "";
+  const isFavorite = favoriteSlugs.has(tool.slug);
+  const favoriteLabel = isFavorite ? "已加入常用" : "加入常用工具";
+  const favoriteIcon = isFavorite ? "★" : "☆";
 
   return `
     <article class="tool-card" data-slug="${escapeHtml(tool.slug)}">
@@ -126,6 +284,10 @@ function renderCard(tool) {
       <p class="tool-summary">${escapeHtml(tool.summary)}</p>
 
       <div class="tool-links">
+        <button type="button" class="favorite-button" data-favorite-toggle="${escapeHtml(tool.slug)}" aria-pressed="${isFavorite}">
+          <span aria-hidden="true">${favoriteIcon}</span>
+          <span>${favoriteLabel}</span>
+        </button>
         <a class="tool-link tool-link-primary" href="${escapeHtml(tool.link)}" target="_blank" rel="noopener noreferrer">前往工具</a>
       </div>
     </article>

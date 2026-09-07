@@ -126,8 +126,27 @@
         </aside>
       </section>
 
+      <section class="favorites-block" aria-labelledby="favorites-title">
+        <div class="favorites-copy">
+          <p class="section-kicker">QUICK ACCESS</p>
+          <h2 id="favorites-title">常用工具</h2>
+          <p>把常用的工具放在這裡，下次開啟就能直接使用。</p>
+        </div>
+        <div class="favorite-tools" id="favorite-tools" aria-live="polite"></div>
+        <p class="favorite-empty" id="favorite-empty">還沒有常用工具，從下方卡片點擊「加入常用工具」即可新增。</p>
+        <p class="visually-hidden" id="favorite-status" aria-live="polite"></p>
+      </section>
+
       <section class="section-block" id="tools">
+        <div class="tools-heading">
+          <div>
+            <p class="section-kicker">ALL TOOLS</p>
+            <h2>所有工具</h2>
+          </div>
+          <p id="page-summary" aria-live="polite"></p>
+        </div>
         <div class="tool-grid" id="tool-grid" aria-live="polite"></div>
+        <nav class="pagination" id="pagination" aria-label="工具分頁"></nav>
       </section>
     </main>
 
