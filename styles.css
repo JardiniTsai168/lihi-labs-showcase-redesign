@@ -701,7 +701,8 @@ input {
 .tool-card[data-slug="chrome-extension"] .tool-preview,
 .tool-card[data-slug="marketing-guide"] .tool-preview,
 .tool-card[data-slug="support-report"] .tool-preview,
-.tool-card[data-slug="sheets-addon"] .tool-preview {
+.tool-card[data-slug="sheets-addon"] .tool-preview,
+.tool-card[data-slug="quickdash"] .tool-preview {
   background:
     radial-gradient(circle at top, rgba(255, 107, 157, 0.18), transparent 56%),
     linear-gradient(180deg, #fff9fc 0%, #fff0f5 100%);

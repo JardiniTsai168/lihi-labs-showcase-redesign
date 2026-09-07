@@ -81,6 +81,14 @@ const tools = [
     preview: "assets/sheets-addon-preview.svg",
     previewType: "image",
     link: "https://lihi.io/"
+  },
+  {
+    name: "快客數據",
+    slug: "quickdash",
+    summary: "快速串接 Meta、GA4、Google Ads、LINE 等平台，把分散的行銷數據集中成報表，再用 AI 找出值得優化的關鍵。",
+    preview: "assets/quickdash-preview.svg",
+    previewType: "image",
+    link: "https://quickdash.com.tw/tw"
   }
 ];
 
