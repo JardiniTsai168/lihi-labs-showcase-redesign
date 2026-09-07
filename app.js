@@ -13,20 +13,11 @@ const tools = [
     name: "lihiAgentMCP",
     slug: "agent-mcp",
     summary: "lihi 專屬 Agent MCP。幫你的 Agent 自動建立閱讀、廣告或貼文短網址，也能呼叫文案素材產生器 API，完成文案、素材產出與上架。",
-    fee: "免費（限量素材產生；自訂網域需訂閱帳號）",
+    fee: "免費",
     preview: "assets/lihi-agent-mcp-preview.svg",
     previewType: "image",
     beta: true,
     link: "https://lihi.io/"
-  },
-  {
-    name: "品牌網域只要 $1",
-    slug: "brand-domain",
-    summary: "為你的專案申請專屬品牌網域，只要 $1，讓每一次分享都更有辨識度。",
-    fee: "$1",
-    preview: "assets/brand-domain-preview.svg",
-    previewType: "image",
-    link: "https://lihidomain.com/link-domain-entrepreneur/"
   },
   {
     name: "快客數據",
@@ -121,6 +112,8 @@ const pageSummary = document.querySelector("#page-summary");
 const favoriteTools = document.querySelector("#favorite-tools");
 const favoriteEmpty = document.querySelector("#favorite-empty");
 const favoriteStatus = document.querySelector("#favorite-status");
+const singleColumnTools = window.matchMedia("(max-width: 640px)");
+const twoColumnTools = window.matchMedia("(min-width: 641px) and (max-width: 980px)");
 
 let currentPage = 1;
 const favoriteSlugs = loadFavorites();
@@ -131,6 +124,8 @@ renderFavorites();
 toolGrid?.addEventListener("click", handleFavoriteToggle);
 favoriteTools?.addEventListener("click", handleFavoriteToggle);
 pagination?.addEventListener("click", handlePageChange);
+singleColumnTools.addEventListener("change", handleToolLayoutChange);
+twoColumnTools.addEventListener("change", handleToolLayoutChange);
 
 function renderPage({ scroll = false } = {}) {
   const totalPages = Math.max(1, Math.ceil(tools.length / PAGE_SIZE));
@@ -161,7 +156,29 @@ function renderGrid(target, items, emptyMessage) {
     return;
   }
 
-  target.innerHTML = items.map(renderCard).join("");
+  const renderedItems = items.map(renderCard);
+
+  if (target === toolGrid && currentPage === 1) {
+    const promoPosition = singleColumnTools.matches ? 1 : twoColumnTools.matches ? 2 : 3;
+    renderedItems.splice(promoPosition, 0, renderBrandDomainCallout());
+  }
+
+  target.innerHTML = renderedItems.join("");
+}
+
+function handleToolLayoutChange() {
+  if (currentPage === 1) {
+    renderPage();
+  }
+}
+
+function renderBrandDomainCallout() {
+  return `
+    <aside class="brand-domain-callout">
+      <strong>品牌網域只要 $1</strong>
+      <span>為你的專案申請專屬品牌網域，只要 $1，讓每一次的分享都更有信任感。</span>
+    </aside>
+  `;
 }
 
 function renderPagination(totalPages) {
