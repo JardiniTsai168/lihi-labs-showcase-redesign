@@ -5,6 +5,7 @@ const tools = [
     summary: "不知道廣告該怎麼寫、素材怎麼做？輸入產品名稱和三個優點，剩下的交給我們！",
     preview: "assets/creative-generator-demo.mp4",
     previewType: "video",
+    beta: true,
     link: "https://creative.bktsai.link/"
   },
   {
@@ -21,6 +22,7 @@ const tools = [
     summary: "lihi 專屬 Agent MCP。幫你的 Agent 自動建立閱讀、廣告或貼文短網址，也能呼叫文案素材產生器 API，完成文案、素材產出與上架。",
     preview: "assets/lihi-agent-mcp-preview.svg",
     previewType: "image",
+    beta: true,
     link: "https://lihi.io/"
   },
   {
@@ -66,9 +68,10 @@ const tools = [
   {
     name: "客服報表系統",
     slug: "support-report",
-    summary: "讓 AI 讀懂所有客服訊息，自動整理常見問題與分析報表，幫你找出服務流程裡容易被忽略的盲點。",
+    summary: "讓 AI 分析所有客服訊息，自動整理歸納以及產出客服分析報表，幫你找出客服長時間忽略的盲點。",
     preview: "assets/support-report-preview.svg",
     previewType: "image",
+    beta: true,
     link: "https://lihi.io/"
   }
 ];
@@ -96,11 +99,13 @@ function renderCard(tool) {
     : `<video autoplay muted loop playsinline preload="metadata">
         <source src="${escapeHtml(tool.preview)}" type="video/mp4" />
       </video>`;
+  const betaBadge = tool.beta ? `<span class="tool-beta">Beta</span>` : "";
 
   return `
     <article class="tool-card" data-slug="${escapeHtml(tool.slug)}">
       <div class="tool-head">
         <h3 class="tool-title">${escapeHtml(tool.name)}</h3>
+        ${betaBadge}
       </div>
 
       <div class="tool-media-wrap">
