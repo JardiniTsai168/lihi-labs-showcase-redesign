@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-labelledby="t d">
+  <title id="t">UTM 管理員功能預覽</title><desc id="d">集中管理廣告活動 UTM 參數與成效的介面示意</desc>
+  <defs><linearGradient id="b" x2="1" y2="1"><stop stop-color="#fffafd"/><stop offset="1" stop-color="#f1efff"/></linearGradient><linearGradient id="g" x2="1" y2="1"><stop stop-color="#ff6b9d"/><stop offset="1" stop-color="#1a1a5e"/></linearGradient></defs>
+  <rect width="800" height="450" rx="34" fill="url(#b)"/><rect x="48" y="62" width="704" height="326" rx="30" fill="#fffdfd" stroke="#1a1a5e" stroke-opacity=".1"/>
+  <circle cx="82" cy="92" r="7" fill="#ff6b9d"/><circle cx="104" cy="92" r="7" fill="#ffc0d4"/><circle cx="126" cy="92" r="7" fill="#1a1a5e" opacity=".3"/>
+  <rect x="76" y="132" width="648" height="58" rx="17" fill="#fff5f8"/><text x="98" y="168" fill="#1a1a5e" opacity=".55" font-family="Arial,sans-serif" font-size="18">https://your-brand.com/campaign</text><rect x="636" y="142" width="68" height="38" rx="12" fill="url(#g)"/>
+  <g font-family="Arial,sans-serif" font-size="16" font-weight="700"><rect x="76" y="214" width="176" height="52" rx="16" fill="#ffe5ee"/><text x="98" y="246" fill="#1a1a5e">SOURCE · meta</text><rect x="270" y="214" width="176" height="52" rx="16" fill="#eeeaff"/><text x="292" y="246" fill="#1a1a5e">MEDIUM · cpc</text><rect x="464" y="214" width="260" height="52" rx="16" fill="#fff0f5"/><text x="486" y="246" fill="#1a1a5e">CAMPAIGN · launch</text></g>
+  <rect x="76" y="294" width="278" height="62" rx="18" fill="#1a1a5e"/><rect x="98" y="314" width="188" height="12" rx="6" fill="#fff" opacity=".76"/><rect x="98" y="336" width="126" height="9" rx="5" fill="#ffb2cb"/>
+  <path d="M410 344l48-34 46 16 58-64 68 40 66-74" fill="none" stroke="#ff6b9d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><g fill="#1a1a5e"><circle cx="410" cy="344" r="8"/><circle cx="504" cy="326" r="8"/><circle cx="630" cy="302" r="8"/></g>
+</svg>

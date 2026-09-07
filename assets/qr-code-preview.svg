@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-labelledby="t d">
+  <title id="t">QR Code 產生器功能預覽</title><desc id="d">網址轉換成 QR Code 的示意圖</desc>
+  <defs><linearGradient id="b" x2="1" y2="1"><stop stop-color="#fffafd"/><stop offset="1" stop-color="#ffe5ee"/></linearGradient><linearGradient id="g" x2="1" y2="1"><stop stop-color="#ff6b9d"/><stop offset="1" stop-color="#1a1a5e"/></linearGradient></defs>
+  <rect width="800" height="450" rx="34" fill="url(#b)"/><circle cx="690" cy="60" r="130" fill="#ff6b9d" opacity=".08"/><circle cx="90" cy="410" r="130" fill="#1a1a5e" opacity=".05"/>
+  <rect x="58" y="112" width="292" height="226" rx="26" fill="#fffdfd" stroke="#1a1a5e" stroke-opacity=".12"/>
+  <rect x="86" y="148" width="236" height="54" rx="16" fill="#fff5f8"/><circle cx="110" cy="175" r="8" fill="#ff6b9d"/><rect x="130" y="166" width="156" height="18" rx="9" fill="#1a1a5e" opacity=".18"/>
+  <rect x="86" y="226" width="164" height="18" rx="9" fill="#1a1a5e"/><rect x="86" y="260" width="206" height="14" rx="7" fill="#1a1a5e" opacity=".18"/><rect x="86" y="288" width="130" height="14" rx="7" fill="#ff6b9d" opacity=".55"/>
+  <path d="M372 225h66" stroke="#ff6b9d" stroke-width="7" stroke-linecap="round"/><path d="m425 210 16 15-16 15" fill="none" stroke="#ff6b9d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(474 68)"><rect width="270" height="314" rx="34" fill="url(#g)"/><rect x="34" y="34" width="202" height="202" rx="20" fill="#fffdfd"/>
+    <g fill="#1a1a5e"><path d="M58 58h54v54H58zm14 14v26h26V72zM158 58h54v54h-54zm14 14v26h26V72zM58 158h54v54H58zm14 14v26h26v-26z"/><path d="M130 58h16v32h-16zm0 48h32v16h-32zm48 16h34v16h-34zm-48 18h16v34h-16zm32 0h16v16h-16zm34 18h16v54h-16zm-66 34h48v20h-48z"/></g>
+    <rect x="54" y="266" width="162" height="18" rx="9" fill="#fffdfd" opacity=".82"/><rect x="88" y="294" width="94" height="12" rx="6" fill="#ffb2cb"/></g>
+</svg>

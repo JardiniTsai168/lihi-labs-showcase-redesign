@@ -22,6 +22,46 @@ const tools = [
     preview: "assets/lihi-agent-mcp-preview.svg",
     previewType: "image",
     link: "https://lihi.io/"
+  },
+  {
+    name: "QR Code 產生器",
+    slug: "qr-code",
+    summary: "把網址變成好掃、好分享的 QR Code，活動現場、印刷品或門市導流都能立即使用。",
+    preview: "assets/qr-code-preview.svg",
+    previewType: "image",
+    link: "https://lihi.io/"
+  },
+  {
+    name: "UTM 管理員",
+    slug: "utm-manager",
+    summary: "把散落的 UTM 命名和連結集中整理，讓每次投放都更好追蹤，也少一點人工出錯。",
+    preview: "assets/utm-manager-preview.svg",
+    previewType: "image",
+    link: "https://lihi.io/"
+  },
+  {
+    name: "iOS 捷徑",
+    slug: "ios-shortcut",
+    summary: "在 iPhone 上一鍵建立 lihi 短網址，不用切換 App，分享連結更快一步。",
+    preview: "assets/ios-shortcut-preview.svg",
+    previewType: "image",
+    link: "https://lihi.io/"
+  },
+  {
+    name: "Chrome 套件",
+    slug: "chrome-extension",
+    summary: "瀏覽網頁時直接建立 lihi 短網址，不必來回貼連結，分享和追蹤更順手。",
+    preview: "assets/chrome-extension-preview.svg",
+    previewType: "image",
+    link: "https://lihi.io/"
+  },
+  {
+    name: "基礎行銷攻略",
+    slug: "marketing-guide",
+    summary: "從短網址、UTM 到廣告追蹤，用容易上手的方式補齊行銷基本功。",
+    preview: "assets/marketing-guide-preview.svg",
+    previewType: "image",
+    link: "https://lihi.io/"
   }
 ];
 

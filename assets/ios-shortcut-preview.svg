@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-labelledby="t d">
+  <title id="t">iOS 捷徑功能預覽</title><desc id="d">在 iPhone 分享選單中建立 lihi 短網址的示意圖</desc>
+  <defs><linearGradient id="b" x2="1" y2="1"><stop stop-color="#fffafd"/><stop offset="1" stop-color="#ffe5ee"/></linearGradient><linearGradient id="g" x2="1" y2="1"><stop stop-color="#ff6b9d"/><stop offset="1" stop-color="#1a1a5e"/></linearGradient></defs>
+  <rect width="800" height="450" rx="34" fill="url(#b)"/><circle cx="660" cy="92" r="130" fill="#ff6b9d" opacity=".1"/>
+  <rect x="82" y="48" width="254" height="354" rx="42" fill="#1a1a5e"/><rect x="100" y="72" width="218" height="304" rx="28" fill="#fffdfd"/><rect x="174" y="58" width="70" height="10" rx="5" fill="#fff" opacity=".5"/>
+  <rect x="124" y="106" width="170" height="70" rx="20" fill="#fff5f8"/><rect x="144" y="128" width="126" height="12" rx="6" fill="#1a1a5e" opacity=".22"/><rect x="144" y="150" width="88" height="10" rx="5" fill="#ff6b9d" opacity=".7"/>
+  <rect x="124" y="198" width="170" height="132" rx="22" fill="url(#g)"/><path d="M209 224v50m0-50-22 22m22-22 22 22" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><rect x="158" y="294" width="102" height="12" rx="6" fill="#fff" opacity=".72"/>
+  <path d="M370 225h76" stroke="#ff6b9d" stroke-width="7" stroke-linecap="round"/><path d="m432 210 16 15-16 15" fill="none" stroke="#ff6b9d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="484" y="110" width="242" height="230" rx="32" fill="#fffdfd" stroke="#1a1a5e" stroke-opacity=".12"/><circle cx="605" cy="166" r="38" fill="url(#g)"/><path d="M584 166h42m-14-14 14 14-14 14" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><text x="605" y="232" text-anchor="middle" fill="#1a1a5e" font-family="Arial,sans-serif" font-size="24" font-weight="700">lihi 捷徑</text><rect x="532" y="258" width="146" height="18" rx="9" fill="#1a1a5e" opacity=".15"/><rect x="558" y="292" width="94" height="14" rx="7" fill="#ff6b9d" opacity=".65"/>
+</svg>

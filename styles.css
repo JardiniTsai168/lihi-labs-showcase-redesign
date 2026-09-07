@@ -556,7 +556,12 @@ input {
 }
 
 .tool-card[data-slug="coloring"] .tool-preview,
-.tool-card[data-slug="agent-mcp"] .tool-preview {
+.tool-card[data-slug="agent-mcp"] .tool-preview,
+.tool-card[data-slug="qr-code"] .tool-preview,
+.tool-card[data-slug="utm-manager"] .tool-preview,
+.tool-card[data-slug="ios-shortcut"] .tool-preview,
+.tool-card[data-slug="chrome-extension"] .tool-preview,
+.tool-card[data-slug="marketing-guide"] .tool-preview {
   background:
     radial-gradient(circle at top, rgba(255, 107, 157, 0.18), transparent 56%),
     linear-gradient(180deg, #fff9fc 0%, #fff0f5 100%);
@@ -564,6 +569,20 @@ input {
 
 .tool-card[data-slug="coloring"] .tool-preview video {
   object-fit: contain;
+}
+
+@media (min-width: 981px) {
+  .tool-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .tool-card {
+    grid-column: span 2;
+  }
+
+  .tool-card:nth-last-child(2):nth-child(3n + 1) {
+    grid-column: 2 / span 2;
+  }
 }
 
 @media (max-width: 980px) {
