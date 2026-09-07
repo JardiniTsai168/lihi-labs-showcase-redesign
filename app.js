@@ -3,49 +3,55 @@ const tools = [
     name: "文案+素材產生器",
     slug: "creative",
     summary: "不知道廣告該怎麼寫、素材怎麼做？輸入產品名稱和三個優點，剩下的交給我們！",
+    fee: "限量免費，需註冊",
     preview: "assets/creative-generator-demo.mp4",
     previewType: "video",
     beta: true,
     link: "https://creative.bktsai.link/"
   },
   {
-    name: "著色圖產生器",
-    slug: "coloring",
-    summary: "把你最喜歡的寵物、家人或風景照片，變成一張可以親手上色的回憶。",
-    preview: "assets/coloring-generator-demo.mp4",
-    previewType: "video",
-    link: "https://coloring.bktsai.link/"
-  },
-  {
     name: "lihiAgentMCP",
     slug: "agent-mcp",
     summary: "lihi 專屬 Agent MCP。幫你的 Agent 自動建立閱讀、廣告或貼文短網址，也能呼叫文案素材產生器 API，完成文案、素材產出與上架。",
+    fee: "免費（限量素材產生；自訂網域需訂閱帳號）",
     preview: "assets/lihi-agent-mcp-preview.svg",
     previewType: "image",
     beta: true,
     link: "https://lihi.io/"
   },
   {
-    name: "QR Code 產生器",
-    slug: "qr-code",
-    summary: "把網址變成好掃、好分享的 QR Code，活動現場、印刷品或門市導流都能立即使用。",
-    preview: "assets/qr-code-preview.svg",
+    name: "品牌網域只要 $1",
+    slug: "brand-domain",
+    summary: "為你的專案申請專屬品牌網域，只要 $1，讓每一次分享都更有辨識度。",
+    fee: "$1",
+    preview: "assets/brand-domain-preview.svg",
     previewType: "image",
-    link: "https://lihi.io/"
+    link: "https://lihidomain.com/link-domain-entrepreneur/"
+  },
+  {
+    name: "快客數據",
+    slug: "quickdash",
+    summary: "快速串接 Meta、GA4、Google Ads、LINE 等平台，把分散的行銷數據集中成報表，再用 AI 找出值得優化的關鍵。",
+    fee: "免費",
+    preview: "assets/quickdash-preview.svg",
+    previewType: "image",
+    link: "https://quickdash.com.tw/tw"
   },
   {
     name: "UTM 管理員",
     slug: "utm-manager",
     summary: "把散落的 UTM 命名和連結集中整理，讓每次投放都更好追蹤，也少一點人工出錯。",
+    fee: "免費",
     preview: "assets/utm-manager-preview.svg",
     previewType: "image",
     link: "https://lihi.io/"
   },
   {
-    name: "iOS 捷徑",
-    slug: "ios-shortcut",
-    summary: "在 iPhone 上一鍵建立 lihi 短網址，不用切換 App，分享連結更快一步。",
-    preview: "assets/ios-shortcut-preview.svg",
+    name: "QR Code 產生器",
+    slug: "qr-code",
+    summary: "把網址變成好掃、好分享的 QR Code，活動現場、印刷品或門市導流都能立即使用。",
+    fee: "免費",
+    preview: "assets/qr-code-preview.svg",
     previewType: "image",
     link: "https://lihi.io/"
   },
@@ -53,15 +59,26 @@ const tools = [
     name: "Chrome 套件",
     slug: "chrome-extension",
     summary: "瀏覽網頁時直接建立 lihi 短網址，不必來回貼連結，分享和追蹤更順手。",
+    fee: "免費",
     preview: "assets/chrome-extension-preview.svg",
     previewType: "image",
     link: "https://lihi.io/"
   },
   {
-    name: "基礎行銷攻略",
-    slug: "marketing-guide",
-    summary: "從短網址、UTM 到廣告追蹤，用容易上手的方式補齊行銷基本功。",
-    preview: "assets/marketing-guide-preview.svg",
+    name: "iOS 捷徑",
+    slug: "ios-shortcut",
+    summary: "在 iPhone 上一鍵建立 lihi 短網址，不用切換 App，分享連結更快一步。",
+    fee: "需訂閱帳號",
+    preview: "assets/ios-shortcut-preview.svg",
+    previewType: "image",
+    link: "https://lihi.io/"
+  },
+  {
+    name: "Google 試算表外掛",
+    slug: "sheets-addon",
+    summary: "在 Google 試算表裡直接輸入指令，就能快速建立 lihi 短網址，整理大量連結也不用來回切換工具。",
+    fee: "免費（不包含自訂網域）",
+    preview: "assets/sheets-addon-preview.svg",
     previewType: "image",
     link: "https://lihi.io/"
   },
@@ -69,26 +86,29 @@ const tools = [
     name: "客服報表系統",
     slug: "support-report",
     summary: "讓 AI 分析所有客服訊息，自動整理歸納以及產出客服分析報表，幫你找出客服長時間忽略的盲點。",
+    fee: "限額開放",
     preview: "assets/support-report-preview.svg",
     previewType: "image",
     beta: true,
     link: "https://lihi.io/"
   },
   {
-    name: "Google 試算表外掛",
-    slug: "sheets-addon",
-    summary: "在 Google 試算表裡直接輸入指令，就能快速建立 lihi 短網址，整理大量連結也不用來回切換工具。",
-    preview: "assets/sheets-addon-preview.svg",
+    name: "基礎行銷攻略",
+    slug: "marketing-guide",
+    summary: "從短網址、UTM 到廣告追蹤，用容易上手的方式補齊行銷基本功。",
+    fee: "免費",
+    preview: "assets/marketing-guide-preview.svg",
     previewType: "image",
     link: "https://lihi.io/"
   },
   {
-    name: "快客數據",
-    slug: "quickdash",
-    summary: "快速串接 Meta、GA4、Google Ads、LINE 等平台，把分散的行銷數據集中成報表，再用 AI 找出值得優化的關鍵。",
-    preview: "assets/quickdash-preview.svg",
-    previewType: "image",
-    link: "https://quickdash.com.tw/tw"
+    name: "著色圖產生器",
+    slug: "coloring",
+    summary: "把你最喜歡的寵物、家人或風景照片，變成一張可以親手上色的回憶。",
+    fee: "限量免費",
+    preview: "assets/coloring-generator-demo.mp4",
+    previewType: "video",
+    link: "https://coloring.bktsai.link/"
   }
 ];
 
@@ -290,6 +310,11 @@ function renderCard(tool) {
       </div>
 
       <p class="tool-summary">${escapeHtml(tool.summary)}</p>
+
+      <p class="tool-fee">
+        <span>費用</span>
+        <strong>${escapeHtml(tool.fee)}</strong>
+      </p>
 
       <div class="tool-links">
         <button type="button" class="favorite-button" data-favorite-toggle="${escapeHtml(tool.slug)}" aria-pressed="${isFavorite}">

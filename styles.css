@@ -684,7 +684,7 @@ input {
 
 .tool-card {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto auto;
   gap: 16px;
   min-height: 100%;
   padding: clamp(18px, 2vw, 24px);
@@ -729,6 +729,7 @@ input {
 
 .tool-card[data-slug="coloring"] .tool-preview,
 .tool-card[data-slug="agent-mcp"] .tool-preview,
+.tool-card[data-slug="brand-domain"] .tool-preview,
 .tool-card[data-slug="qr-code"] .tool-preview,
 .tool-card[data-slug="utm-manager"] .tool-preview,
 .tool-card[data-slug="ios-shortcut"] .tool-preview,
@@ -832,6 +833,30 @@ input {
   font-size: 1rem;
   line-height: 1.72;
   color: var(--ink-soft);
+}
+
+.tool-fee {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(26, 26, 94, 0.09);
+  color: var(--navy);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.tool-fee span {
+  flex: 0 0 auto;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.tool-fee strong {
+  font-weight: 800;
 }
 
 .tool-links {
