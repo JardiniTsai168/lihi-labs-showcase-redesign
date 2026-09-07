@@ -1,6 +1,6 @@
-# lihi Labs Showcase Redesign
+# lihi 工具庫
 
-`https://lihidev.com/labs/` 的首頁重設提案。
+`https://lihidev.com/labs/` 的工具庫首頁。
 
 目標：
 

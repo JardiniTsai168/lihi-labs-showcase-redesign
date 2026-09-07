@@ -93,6 +93,15 @@ const tools = [
     link: "https://lihi.io/"
   },
   {
+    name: "lihi WordPress Plugin",
+    slug: "wordpress-plugin",
+    summary: "在 WordPress 後台直接為文章、頁面與媒體建立或複製 lihi 短網址，也能加入網域、標籤與 UTM，不必離開內容管理畫面。",
+    fee: "免費",
+    preview: "assets/wordpress-plugin-preview.svg",
+    previewType: "image",
+    link: "https://wordpress.org/plugins/lihi-short-url/"
+  },
+  {
     name: "著色圖產生器",
     slug: "coloring",
     summary: "把你最喜歡的寵物、家人或風景照片，變成一張可以親手上色的回憶。",
