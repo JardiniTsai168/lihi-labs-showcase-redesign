@@ -766,10 +766,37 @@ input {
   font-weight: 800;
 }
 
-.brand-domain-callout span {
+.brand-domain-callout > span {
   color: var(--ink-soft);
   font-size: 0.94rem;
   line-height: 1.6;
+}
+
+.brand-domain-callout > a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--pink-strong);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.brand-domain-callout > a:hover {
+  transform: translateY(-2px);
+  background: var(--navy);
+}
+
+.brand-domain-callout > a:focus-visible {
+  outline: 3px solid rgba(255, 107, 157, 0.3);
+  outline-offset: 3px;
 }
 
 @media (min-width: 981px) {

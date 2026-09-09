@@ -186,6 +186,9 @@ function renderBrandDomainCallout() {
     <aside class="brand-domain-callout">
       <strong>品牌網域只要 $1</strong>
       <span>為你的專案申請專屬品牌網域，只要 $1，讓每一次的分享都更有信任感。</span>
+      <a href="https://lihidomain.com/" target="_blank" rel="noopener noreferrer">
+        馬上申請<span aria-hidden="true">→</span>
+      </a>
     </aside>
   `;
 }
